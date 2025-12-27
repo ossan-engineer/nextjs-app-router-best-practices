@@ -134,7 +134,10 @@ src/
 │  │  └─ _actions/         # 認証 Server Actions
 │  ├─ robots/
 │  │  ├─ page.tsx          # 一覧ページ（Server Component）
-│  │  ├─ [id]/page.tsx     # 詳細ページ（Server Component）
+│  │  ├─ loading.tsx       # ローディング UI
+│  │  ├─ [id]/
+│  │  │  ├─ page.tsx       # 詳細ページ（Server Component）
+│  │  │  └─ loading.tsx    # ローディング UI
 │  │  ├─ _actions/         # Server Actions
 │  │  │  ├─ robot.ts
 │  │  │  └─ robot.test.ts  # テスト
@@ -156,6 +159,7 @@ src/
 - `*.client.tsx` - Client Component（明示的に区別）
 - `_actions/` - Server Actions（private）
 - `_components/` - ページ固有コンポーネント（private）
+- `loading.tsx` - ローディング UI（自動的に Suspense boundary として機能）
 
 ## サンプル機能
 
@@ -168,6 +172,7 @@ src/
 - Server Component でデータ取得
 - Server Actions で CRUD
 - useActionState でフォーム状態管理
+- loading.tsx でスケルトン UI
 
 ### 2. 認証
 
